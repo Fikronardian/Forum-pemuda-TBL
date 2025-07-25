@@ -1,0 +1,309 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>FORUM PEMUDA TBL</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #eef5fc;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: linear-gradient(90deg, #007acc, #6a5acd);
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+    }
+
+    .section {
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      margin: 1rem;
+      overflow: hidden;
+    }
+
+    summary {
+      padding: 15px;
+      background: #f4faff;
+      font-weight: bold;
+      font-size: 18px;
+      color: #007acc;
+      cursor: pointer;
+      border-left: 5px solid #007acc;
+      transition: background 0.3s;
+    }
+
+    summary:hover {
+      background: #e1f0ff;
+    }
+
+    .content {
+      padding: 15px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background: #e8f3ff;
+      color: #333;
+    }
+
+    .foto-kegiatan {
+      margin-top: 10px;
+      max-width: 90%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>FORUM PEMUDA TBL</h1>
+    <div style='font-size: 18px; margin-top: 10px;'>
+      Selamat datang di forum pemuda kami 😊<br>Bersama kita kuat, bersatu kita hebat!
+    </div>
+  </header>
+
+  <div style="text-align: center; margin: 20px 0;">
+    <img src="images/IMG_2978.jpeg" alt="Foto Kegiatan Forum" class="foto-kegiatan">
+  </div>
+
+<details class="section">
+  <summary>🔐 Login Admin</summary>
+  <div class="content">
+    <form id="loginForm" onsubmit="return handleLogin(event)" style="max-width: 400px; margin: auto; text-align: left;">
+      <label for="username">Username:</label><br>
+      <input type="text" id="username" name="username" required style="width: 100%; padding: 10px; margin-bottom: 10px;"><br>
+      <label for="password">Password:</label><br>
+      <input type="password" id="password" name="password" required style="width: 100%; padding: 10px; margin-bottom: 10px;"><br>
+      <button type="submit" style="width: 100%; padding: 10px; background-color: #007acc; color: white; border: none; border-radius: 5px;">Login</button>
+<div id="loginStatus" style="margin-top: 10px; font-weight: bold;"></div>
+    </form>
+    <p id="loginStatus" style="text-align: center; margin-top: 15px; font-weight: bold;"></p>
+  </div>
+</details>
+
+<details class="section">
+  <summary>📋 Daftar Peserta</summary>
+  <div class="content">
+    <ul>
+      <li>Abdullah</li>
+      <li>Amrul</li>
+      <li>Andi</li>
+      <li>Avin</li>
+      <li>Aying</li>
+      <li>Ayat</li>
+      <li>Bah</li>
+      <li>Buya</li>
+      <li>Harman</li>
+      <li>Havi</li>
+      <li>Supar</li>
+      <li>Hendri</li>
+      <li>ijal</li>
+      <li>ipan</li>
+      <li>Karnaen</li>
+      <li>Rizqi</li>
+      <li>Roni</li>
+      <li>Fadli</li>
+      <li>Wadi</li>
+      <li>Suhardi</li>
+      <li>Syukron</li>
+      <li>Uji</li>
+      <li>Umam</li>
+      <li>Wira (H. saufi)</li>
+      <li>Yazit</li>
+      <li>Hamzan</li>
+      <li>Rodi</li>
+      <li>Beni</li>
+      <li>Suprian</li>
+      <li>Erwin</li>
+      <li>Radia</li>
+      <li>Haerul</li>
+      <li>Tamrin</li>
+      <li>Wira (Mu'in)</li>
+      <li>Ju</li>
+      <li>Awan</li>
+      <li>Zulpan</li>
+      <li>Sulhan</li>
+      <li>Opik</li>
+      <li>Awar</li>
+      <li>Apis</li>
+    </ul>
+  </div>
+</details>
+
+
+
+
+<script>
+  function handleLogin(event) {
+    event.preventDefault();
+    const username = document.getElementById("username").value.trim();
+    const password = document.getElementById("password").value.trim();
+    const status = document.getElementById("loginStatus");
+
+    if (username === "admin" && password === "admin123") {
+      window.location.href = "dashboard_admin.html";
+    } else {
+      status.textContent = "❌ Username atau password salah!";
+      status.style.color = "red";
+    }
+    return false;
+  }
+</script>
+
+
+<main>
+    
+
+    <details class="section">
+      <summary>💸 Tagihan Bulan Agustus 2025</summary>
+      <div class="content">
+        <table>
+          <thead><tr><th>No</th><th>Nama</th><th>Tagihan</th></tr></thead>
+          <tbody>
+<tr><td>1</td><td>Abdullah</td><td>00.</td></tr>
+<tr><td>2</td><td>Amrul</td><td>00.</td></tr>
+<tr><td>3</td><td>Andi</td><td>00.</td></tr>
+<tr><td>4</td><td>Avin</td><td>00.</td></tr>
+<tr><td>5</td><td>Aying</td><td>00.</td></tr>
+<tr><td>6</td><td>Ayat</td><td>00.</td></tr>
+<tr><td>7</td><td>Bah</td><td>00.</td></tr>
+<tr><td>8</td><td>Buya</td><td>00.</td></tr>
+<tr><td>9</td><td>Harman</td><td>00.</td></tr>
+<tr><td>10</td><td>Hayi</td><td>00.</td></tr>
+<tr><td>11</td><td>Supar</td><td>00.</td></tr>
+<tr><td>12</td><td>Hendri</td><td>00.</td></tr>
+<tr><td>13</td><td>ijal</td><td>00.</td></tr>
+<tr><td>14</td><td>ipan</td><td>00.</td></tr>
+<tr><td>15</td><td>Karnaen</td><td>00.</td></tr>
+<tr><td>16</td><td>Rizqi</td><td>00.</td></tr>
+<tr><td>17</td><td>Roni</td><td>00.</td></tr>
+<tr><td>18</td><td>Fadli</td><td>00.</td></tr>
+<tr><td>19</td><td>Wadi</td><td>00.</td></tr>
+<tr><td>20</td><td>Suhardi</td><td>00.</td></tr>
+<tr><td>21</td><td>Syukron</td><td>00.</td></tr>
+<tr><td>22</td><td>Uji</td><td>00.</td></tr>
+<tr><td>23</td><td>Umam</td><td>00.</td></tr>
+<tr><td>24</td><td>Wira (H. saufi)</td><td>00.</td></tr>
+<tr><td>25</td><td>Yazit</td><td>00.</td></tr>
+<tr><td>26</td><td>Hamzan</td><td>00.</td></tr>
+<tr><td>27</td><td>Rodi</td><td>00.</td></tr>
+<tr><td>28</td><td>Beni</td><td>00.</td></tr>
+<tr><td>29</td><td>Suprian</td><td>00.</td></tr>
+<tr><td>30</td><td>Erwin</td><td>00.</td></tr>
+<tr><td>31</td><td>Radia</td><td>00.</td></tr>
+<tr><td>32</td><td>Haerul</td><td>00.</td></tr>
+<tr><td>33</td><td>Tamrin</td><td>00.</td></tr>
+<tr><td>34</td><td>Wira (Mu'in)</td><td>00.</td></tr>
+<tr><td>35</td><td>Ju</td><td>00.</td></tr>
+<tr><td>36</td><td>Awan</td><td>00.</td></tr>
+<tr><td>37</td><td>Zulpan</td><td>00.</td></tr>
+<tr><td>38</td><td>Sulhan</td><td>00.</td></tr>
+<tr><td>39</td><td>Opik</td><td>00.</td></tr>
+<tr><td>40</td><td>Awar</td><td>00.</td></tr>
+<tr><td>41</td><td>Apis</td><td>00.</td></tr>
+
+          </tbody>
+        </table>
+      </div>
+    </details>
+
+    <details class="section">
+      <summary>💰 Total Uang Terkumpul</summary>
+      <div class="content">
+        <p><strong>00.,504,000</strong></p>
+      </div>
+    </details>
+
+    <details class="section">
+      <summary>🎯 Target Pembelian</summary>
+      <div class="content">
+        <ul>
+          <li>Sound System</li>
+          
+          
+        </ul>
+      </div>
+    </details>
+  
+<details class="section">
+  <summary>📷 Foto Kegiatan</summary>
+  <div class="content" style="text-align: center;">
+    <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
+      <img src="fot/foto1.jpg" alt="Foto 1" style="max-width: 200px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.2);">
+      <img src="fot/foto2.jpg" alt="Foto 2" style="max-width: 200px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.2);">
+      <img src="fot/foto3.jpg" alt="Foto 3" style="max-width: 200px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.2);">
+    </div>
+    <br>
+    <button onclick="alert('Fitur tambah foto hanya bisa bekerja di aplikasi, bukan di HTML statis.')" style="margin-top: 15px; padding: 10px 20px; font-size: 16px; background-color: #007acc; color: white; border: none; border-radius: 5px; cursor: pointer;">➕ Tambah Foto</button>
+  </div>
+</details>
+
+</main>
+
+
+<details>
+  <summary>📌 Agenda Kegiatan</summary>
+  <ul>
+    <li></li>
+  </ul>
+</details>
+
+
+
+
+
+
+<script>
+  function hitungTotalUang() {
+    let total = 0;
+    document.querySelectorAll("details:nth-of-type(1) ul li").forEach(li => {
+      const match = li.textContent.match(/Rp\s*([0-9.]+)/);
+      if (match) {
+        const nominal = parseInt(match[1].replace(/\./g, ""));
+        if (!isNaN(nominal)) total += nominal;
+      }
+    });
+    const totalElemen = document.getElementById("total-uang");
+    if (totalElemen) {
+      totalElemen.textContent = "Rp " + total.toLocaleString("id-ID");
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", hitungTotalUang);
+</script>
+
+</body>
+
+</body>
+</html>
