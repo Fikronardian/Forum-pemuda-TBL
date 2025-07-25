@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard Admin - Forum Pemuda TBL</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #f0f8ff;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #0077cc;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    h2 {
+      margin-top: 30px;
+      color: #333;
+    }
+    section {
+      margin: 20px;
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    textarea, input {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0 15px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    button {
+      background-color: #0077cc;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+    button:hover {
+      background-color: #005fa3;
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Dashboard Admin - Forum Pemuda TBL</h1>
+    <p>Edit semua data peserta, tagihan, target & kegiatan langsung di sini</p>
+  </header>
+
+  <section>
+    <h2>📋 Daftar Peserta</h2>
+    <label for="peserta">Edit nama peserta (satu per baris):</label>
+    <textarea id="peserta" rows="8">Abdullah
+Amrul
+Andi
+Avin
+Aying
+Ayat
+Bah
+Buya</textarea>
+  </section>
+
+  <section>
+    <h2>💸 Tagihan Bulanan</h2>
+    <label for="tagihan">Edit tagihan (format: Nama : Nominal):</label>
+    <textarea id="tagihan" rows="8">Abdullah : 00.
+Amrul : 00.
+Andi : 00.
+Avin : 00.
+Aying : 00.
+Ayat : 00.
+Bah : 00.
+Buya : 00.</textarea>
+  </section>
+
+  <section>
+    <h2>🎯 Target Pembelian</h2>
+    <label for="target">Isi target pembelian:</label>
+    <textarea id="target" rows="5">Kursi lipat
+Sound system
+Spanduk baru</textarea>
+  </section>
+
+  <section>
+    <h2>🗓️ Agenda Kegiatan</h2>
+    <label for="agenda">Isi agenda kegiatan:</label>
+    <textarea id="agenda" rows="5">Kerja bakti lapangan
+Latihan qasidah
+Rapat pemuda</textarea>
+  </section>
+
+  <section style="text-align: center;">
+    <button onclick="simpanData()">💾 Simpan Semua Data</button>
+    <p id="status" style="color: green; font-weight: bold; margin-top: 10px;"></p>
+  </section>
+
+  <script>
+    // Simpan ke localStorage agar tetap tersimpan
+    function simpanData() {
+      localStorage.setItem('peserta', document.getElementById('peserta').value);
+      localStorage.setItem('tagihan', document.getElementById('tagihan').value);
+      localStorage.setItem('target', document.getElementById('target').value);
+      localStorage.setItem('agenda', document.getElementById('agenda').value);
+      document.getElementById('status').innerText = "Data berhasil disimpan!";
+    }
+
+    // Load data kalau ada di localStorage
+    window.onload = function() {
+      if (localStorage.getItem('peserta')) {
+        document.getElementById('peserta').value = localStorage.getItem('peserta');
+      }
+      if (localStorage.getItem('tagihan')) {
+        document.getElementById('tagihan').value = localStorage.getItem('tagihan');
+      }
+      if (localStorage.getItem('target')) {
+        document.getElementById('target').value = localStorage.getItem('target');
+      }
+      if (localStorage.getItem('agenda')) {
+        document.getElementById('agenda').value = localStorage.getItem('agenda');
+      }
+    }
+  </script>
+</body>
+</html>
